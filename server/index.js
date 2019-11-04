@@ -7,8 +7,12 @@ const cors = require('cors');
 
 const app = express();
 
-app.use('/', express.static('public'));
+// app.use('/', express.static('public'));
+
+app.use('/', express.static(__dirname + '/../')); //loader.io
+
 app.use('/:gameId', express.static('public'));
+
 app.use(compression());
 app.use(bodyParser.json());
 app.use(cors());
